@@ -1,36 +1,35 @@
-<!-- From 13.11 -->
-<h1>Quotes App</h1>
+<!-- From 13.17 -->
+<h1>Eat-Da-Burger!</h1>
 
-<p>Manage quotes with this app</p>
 
-<!-- Pass in data from server.js -->
-<ul>
-  {{#each quotes}}
-  	<li>
-  		<p><span class="label">ID:</span> {{this.id}}</p>
-      <p><span class="label">Quote:</span> {{this.quote}}</p>
-      <p><span class="label">Author:</span> {{this.author}}</p>
+<div class="row">
+  <h2>To Make List</h2>
+  <ol>
+    {{#each burger_name}}
+      {{#if devoured}}
+        <button data-id="{{this.id}}" class="devourBurger">Devour</button>
+      {{/if}}
+    {{/each}}
+  </ol>
 
-      <button data-id="{{this.id}}" class="delquote">Delete</button>
+  <h2>Devoured List</h2>
+  <ol>
+    {{#each burger_name}}
+      {{#unless devoured}}
+      {{/unless}}
+    {{/each}}
+  </ol>
+</div>
 
-      <a href="/{{this.id}}">Update this quote</a>
-  	</li>
-  {{/each}}
-</ul>
+<div class="row">
+  <h2>Add a Burger</h2>
+  <form class="create-form">
 
-<h2>Add a Quote</h2>
+    <div class="form-group">
+      <label for="bur">Burger Name:</label>
+      <input type="text" id="bur" name="name">
+    </div>
 
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="auth">Author:</label>
-    <input type="text" id="auth" name="author">
-  </div>
-
-  <div class="form-group">
-    <label for="quo">Quote:</label>
-    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
-  </div>
-
-  <button type="submit">Add Quote</button>
-</form>
+    <button type="submit">Confirm Burger</button>
+  </form>
+</div>
