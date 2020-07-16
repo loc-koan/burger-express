@@ -4,7 +4,7 @@ USE burgers_db;
 /* removes data in tables for a clean slate */ 
 TRUNCATE TABLE burgers;
 
-/* department */ 
+/* table */ 
 INSERT INTO burgers (burger_name, devoured)
 VALUES 
     ("whataburger", false), 

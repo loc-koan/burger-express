@@ -1,22 +1,7 @@
 /* From 13.11 */
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-    // $('.delquote').on('click', function (event) {
-    //     var id = $(this).data('id');
-
-    //     // Send the DELETE request.
-    //     $.ajax('/api/quotes/' + id, {
-    //         type: 'DELETE',
-    //     }).then(function () {
-    //         console.log('deleted id ', id);
-    //         // Reload the page to get the updated list
-    //         location.reload();
-    //     });
-    // });
-
     $('.create-form').on('submit', function (event) {
-        // Make sure to preventDefault on a submit event.
-        event.preventDefault();
+        event.preventDefault(); /* Make sure to preventDefault on a submit event */
 
         var newBurger = {
             burger_name: $('#bur').val().trim(),
@@ -28,31 +13,27 @@ $(function () {
             data: newBurger,
         }).then(function () {
             console.log('created new burger');
-            // Reload the page to get the updated list
-            location.reload();
+            location.reload(); /* Reload the page to get the updated list */
         });
     });
 
     $('.devourBurger').on('click', function (event) {
-        // Make sure to preventDefault on a submit event.
-       // event.preventDefault();
+       /* event.preventDefault(); Make sure to preventDefault on a submit event */
        console.log("Inside devoured click");
 
         var updatedDevour = {
-            devour: true /* check here */
+            devour: true
         };
 
         var id = $(this).data('id');
 
         // Send the POST request.
-        $.ajax('/api/burgers/' + id, { /* check here */
+        $.ajax('/api/burgers/' + id, {
             type: 'PUT',
             data: updatedDevour,
         }).then(function () {
             console.log('burger devoured');
-            location.reload();
-            // Reload the page to get the updated list
-           // ('/');
+            location.reload(); /* Reload the page to get the updated list */ 
         });
     });
 });
