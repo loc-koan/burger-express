@@ -1,9 +1,21 @@
 /* default from 13.17 */ 
 
+body {
+    background-image: url('../img/miha-rekar-ISVtBKNhJ2g-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: 500;
+}
+
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
 }
 
 .label {
@@ -13,9 +25,13 @@ li {
 .create-update-form {
     padding: 5px;
     margin: 5px;
-    background: aqua;
 }
 
 .form-group {
     margin-bottom: 5px;
-}  
+}
+
+ol {
+    list-style-type: none;
+    display: inline;
+}
